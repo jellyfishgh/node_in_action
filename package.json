@@ -1,0 +1,22 @@
+{
+  "name": "node_in_action",
+  "version": "1.0.0",
+  "description": "classes from node_in_action book",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellyfishgh/node_in_action.git"
+  },
+  "keywords": [
+    "node_in_action"
+  ],
+  "author": "jellyfishgh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jellyfishgh/node_in_action/issues"
+  },
+  "homepage": "https://github.com/jellyfishgh/node_in_action#readme"
+}
