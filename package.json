@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/jellyfishgh/node_in_action#readme",
   "dependencies": {
-    "mime": "^1.3.4"
+    "jquery": "^3.1.0",
+    "mime": "^1.3.4",
+    "socket.io": "^1.4.8"
   }
 }
