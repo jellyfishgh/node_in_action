@@ -26,6 +26,7 @@ function processUserInput(chatter, socket) {
 
 $(document).ready(function() {
     let socket = io.connect();
+    let chatter = new Chat(socket);
     socket.on('nameResult', function(result) {
         let msg;
         if(result.success) {
@@ -45,9 +46,22 @@ $(document).ready(function() {
     socket.on('rooms', function(rooms) {
         $('#room-list').empty();
         for(let room in rooms) {
-            
+            room = room.substring(1, room.length);
+            if(room !== ''){
+                $('#room-list').append(divEscapedContentElement(room));
+            }
         }
+        $('#room-list div').click(() => {
+            chatter.processCommand(`/join${$(this).text()}`);
+            $('#sendMessage').focus();
+        });
     });
-    let chatter = new Chat(socket);
-
+    setInterval(() => {
+        socket.emit('rooms');
+    }, 1000);
+    $('#sendMessage').focus();
+    $('#send-form').submit(() => {
+        processUserInput(chatter, socket);
+        return false;
+    });
 });
